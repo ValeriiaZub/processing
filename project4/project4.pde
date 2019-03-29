@@ -31,6 +31,7 @@ void draw() {
 
 class Alien {
   //every img has its own class with variables
+  int cooseImage=int(random(countObj));
   float x=random(width);
   float y=0;
   float speedY=velocity;
@@ -50,13 +51,13 @@ class Alien {
   }
   void fall() {
     y += speedY;
-    if (y>= height)
+    if (y>= height+100)
     {
       y=0;
       x=random(100, width-100);//limited space to play-easier for a user
     }
   }
   void diplay() {
-    image(imgObj[int(random(countObj))], x, y);
+    image(imgObj[cooseImage], x, y);
   }
 }
