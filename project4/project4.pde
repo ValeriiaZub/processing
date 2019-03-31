@@ -3,6 +3,8 @@ PImage imgBack;
 PImage imgObj[];
 int countObj = 4;//num of images-aliens
 int velocity = 10;
+int num;
+int count=0;
 Alien[] ships = new Alien[countObj];//creating objects from constuctor
 
 void setup() {
@@ -23,12 +25,13 @@ void setup() {
 }
 void draw() {
   image(imgBack, 0, 0, 1600, 1000);//background image
-  for ( int i = 0; i <ships.length; i++)
+  for ( int i=0; i<=count; i++)
   {
     ships[i].run();
+    if (num % 100 == 0 && count!=countObj-1) count++;
+    num++;
   }
 }
-
 class Alien {
   //every img has its own class with variables
   int cooseImage=int(random(countObj));
